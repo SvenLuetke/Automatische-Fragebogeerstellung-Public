@@ -1,0 +1,5 @@
+Only underlines text, other formating like bold or cursive is ignored.
+No randomisation between questions
+Is still using text that is crossed out or was removed with track changes activated.
+
+

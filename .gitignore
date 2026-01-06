@@ -1,0 +1,8 @@
+sample/
+Input/
+Output/
+__pycache__/
+.env
+test.py
+ToDos.txt
+.venv/
