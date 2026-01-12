@@ -1,3 +1,6 @@
+# If a Word table has merged cells, the extracted data may contain duplicate rows or columns.
+# This module provides functionality to remove such duplicates from nested lists. 
+
 from table_extraction_word import extract_all_tables_data
 
 
@@ -12,7 +15,7 @@ def remove_duplicates_nested(lst):
     if not isinstance(lst, list):
         return lst
 
-    # First process children recursively
+    
     processed = [remove_duplicates_nested(x) for x in lst]
 
     seen = set()

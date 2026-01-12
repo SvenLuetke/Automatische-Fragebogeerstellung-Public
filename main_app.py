@@ -6,6 +6,8 @@ from pathfinding import get_single_word_document_path
 from dotenv import load_dotenv
 import os
 
+# Create a prompt text file named "prompttext.txt" in the same directory as this script. There you can describe the
+# data and desired behavior of the model in more detail.
 general_prompt = open("prompttext.txt", "r").read()
 
 word_path = get_single_word_document_path('Input')
@@ -13,6 +15,8 @@ word_path = get_single_word_document_path('Input')
 
 
 file_path = str(word_path)
+# Questions should be in tables only, often First Table contains project description or other non relevant data.
+# Hence skip_first_table is set to True
 extracted_data = extract_all_tables_data(file_path, skip_first_table=True)
 
 deduped = remove_duplicates_nested(extracted_data)
@@ -28,7 +32,6 @@ structured_concatenated_list =[
 ]
 
 
-#structured_concatenated_list = structured_concatenated_list[:10]
 
 # Ab hier relevante Teil für die API
 # API sollte das einzige sein was sich ändern kann. Die Dokumentation ist hier: https://ai.google.dev/gemini-api/docs?hl=de
